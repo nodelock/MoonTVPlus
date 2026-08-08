@@ -1,0 +1,11 @@
+[build]
+  command = "pnpm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  SECRETS_SCAN_OMIT_PATHS = ".env.edgeone.example,README.md,CHANGELOG,VERCEL_DEPLOYMENT.md,.github/**"
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_STORAGE_TYPE,NEXT_PUBLIC_SITE_NAME,USERNAME"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
